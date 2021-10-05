@@ -68,7 +68,7 @@ export default function Album() {
 
   return (
     <>
-    <h1 styles={{textAlign: 'center'}} >Langind</h1>
+    <h1 style={{textAlign: 'center'}} >Langind</h1>
       <main>
         {/* Hero unit */}
         <div className={classes.heroContent}>
