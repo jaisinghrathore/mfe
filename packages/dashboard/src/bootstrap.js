@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 const mount = (el) => {
 ReactDOM.render(
-  <h2>tdfgdfgfd</h2>
+  <h2>jai singh rathore</h2>
      ,
     el
   );
