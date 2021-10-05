@@ -1,15 +1,13 @@
 import React from 'react'
-import {mount} from "dashboard/dashboardIndex" 
+import {mount as dashMount} from "dashboard/dashboardIndex" 
 
 export default function dashboardApp() {
     const ref = React.useRef(null);
 
     React.useEffect(()=>{
-            mount(ref.current);
+        dashMount(ref.current);
     },[])
     return (
-        <div ref={ref}>
-            
-        </div>
+        <div ref={ref}></div>
     )
 }
