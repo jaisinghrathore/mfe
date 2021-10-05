@@ -67,7 +67,8 @@ export default function Album() {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
+    <>
+    <h1 styles={{textAlign: 'center'}} >Langind</h1>
       <main>
         {/* Hero unit */}
         <div className={classes.heroContent}>
@@ -161,6 +162,6 @@ export default function Album() {
         <Copyright />
       </footer>
       {/* End footer */}
-    </React.Fragment>
+    </>
   );
 }
