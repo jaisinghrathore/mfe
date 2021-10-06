@@ -1,13 +1,13 @@
 import React from 'react'
 import MarketingApp from "./MarketingApp"
 import {BrowserRouter} from "react-router-dom"
-import DashboardApp from "./DashboardApp"
+import Header from './Header'
 
 export default function App() {
     return (
         <>
         <BrowserRouter>
-            <DashboardApp/>
+            <Header/>
             <MarketingApp/>
         </BrowserRouter>
         </>
