@@ -1,29 +1,38 @@
-import React from 'react'
-import MarketingApp from "./MarketingApp"
-import {BrowserRouter,Route,Switch} from "react-router-dom"
-import AuthApp from "./AuthApp"
+import React, { Suspense } from 'react'
+import {Route,Switch} from "react-router-dom"
 import Header from './Header'
 import {StylesProvider,createGenerateClassName} from "@material-ui/core/styles"
+const MarketingApp = React.lazy(()=>import('./MarketingApp'))
+const DashboardApp = React.lazy(()=>import('./DashboardApp'))
+const AuthApp = React.lazy(()=>import('./AuthApp'))
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 export default function App() {
-
     let generateClassName = createGenerateClassName({
         productionPrefix:'co'
-    });
-
-    
+    });    
     return (
         <>
+            <Suspense fallback={<Loading/>}>
         <StylesProvider generateClassName={generateClassName}>
-        <BrowserRouter>
+          <div>
             <Header/>
+            
             <Switch>
-            <Route exact path="/" component={MarketingApp} ></Route>
             <Route path="/auth" component={AuthApp} ></Route>
+            <Route exact path="/" component={MarketingApp} ></Route>
+            <Route  exact path="/dashboard" component={DashboardApp} ></Route>
             </Switch>
             <MarketingApp/>
-        </BrowserRouter>
+          </div>
         </StylesProvider>
+        </Suspense>
         </>
-    )
-};
+    )};
+
+const Loading = () =>{
+    return(
+    <div style={{width:"100%",height:"100vh",display:"grid",placeItems:'center'}} >
+      <CircularProgress color="success" />
+    </div>
+    )};

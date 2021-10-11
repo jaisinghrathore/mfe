@@ -2,7 +2,7 @@ import React,{useEffect,useRef} from 'react';
 import {mount} from "marketing/marketingIndex";
 import { useHistory } from 'react-router-dom';
 
-export default function MarketingApp(props) {
+export default function MarketingApp() {
     const ref = useRef(null);
     
     const history = useHistory();
